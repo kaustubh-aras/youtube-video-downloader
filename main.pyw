@@ -2,7 +2,7 @@ from pytube import YouTube
 from tkinter import *
 from tkinter import filedialog, messagebox
 import threading
-
+import os
 
 def download_video(url):
     try:
@@ -10,7 +10,7 @@ def download_video(url):
         stream = yt.streams.get_highest_resolution()
         file_path = filedialog.askdirectory()
         if file_path:
-            stream.download(output_path=file_path)
+            video = stream.download(output_path=file_path)
             messagebox.showinfo("Download complete", "Video downloaded successfully!")
         else:
             messagebox.showwarning("Download cancelled", "Please choose a folder to save the video.")
@@ -23,10 +23,13 @@ def download_audio(url):
         stream = yt.streams.filter(only_audio=True).first()
         file_path = filedialog.askdirectory()
         if file_path:
-            stream.download(output_path=file_path)
-            messagebox.showinfo("Download complete", "Audio downloaded successfully!")
+            audio_file_path = stream.download(output_path=file_path)
+            base, ext = os.path.splitext(audio_file_path)
+            new_file = base + '.mp3'
+            os.rename(audio_file_path, new_file)
+            messagebox.showinfo("Download complete", "Audio downloaded successfully")
         else:
-            messagebox.showwarning("Download cancelled", "Please choose a folder to save the audio.")
+            messagebox.showwarning("Download cancelled", "Please choose a folder!")
     except Exception as e:
         messagebox.showerror("Error", "Invalid link")
 
@@ -53,7 +56,7 @@ def start_audio_download():
 root = Tk()
 root.title("YouTube Video Downloader")
 root.geometry("700x550")
-root.iconphoto(True, PhotoImage(file="images/downloading.png"))
+root.iconphoto(True, PhotoImage(file="images/play.png"))
 
 header = Label(root, text="YouTube Video Downloader", font='Ariel')
 header.pack()

@@ -45,11 +45,6 @@ pip install pytube
 4. Click the "Clear" button to clear the URL input field.
 5. Click the "Exit" button to close the application.
 
-
-## GitHub
-
-Find the source code on GitHub: [https://github.com/kaustubhkx/youtube-video-downloader](https://github.com/kaustubhkx/youtube-video-downloader)
-
 ## Setup File Download Link
 
 <a href="https://drive.google.com/file/d/14qrgVXaktUqA-Q8wly00AGzN-mDY7atK/view?usp=sharing" target="_blank">Setup</a>

@@ -7,7 +7,7 @@ import os
 def download_video(url):
     try:
         yt = YouTube(url)
-        stream = yt.streams.get_highest_resolution()
+        stream = yt.streams.filter(file_extension='mp4').get_highest_resolution()
         file_path = filedialog.askdirectory()
         if file_path:
             video = stream.download(output_path=file_path)
@@ -15,7 +15,8 @@ def download_video(url):
         else:
             messagebox.showwarning("Download cancelled", "Please choose a folder to save the video.")
     except Exception as e:
-        messagebox.showerror("Error", "Invalid link")
+        print(str(e))  # Print the exception message
+        messagebox.showerror("Error", "Invalid link or unable to download the video.")
 
 def download_audio(url):
     try:
@@ -31,7 +32,9 @@ def download_audio(url):
         else:
             messagebox.showwarning("Download cancelled", "Please choose a folder!")
     except Exception as e:
-        messagebox.showerror("Error", "Invalid link")
+        print(str(e))  # Print the exception message
+        messagebox.showerror("Error", "Invalid link or unable to download the video.")
+
 
 def clear():
     entry_url.delete(0, END)
@@ -58,7 +61,7 @@ root.title("YouTube Video Downloader")
 root.geometry("700x550")
 root.iconphoto(True, PhotoImage(file="images/play.png"))
 
-header = Label(root, text="YouTube Video Downloader", font='Ariel')
+header = Label(root, text="YouTube Video Downloader", font='Arial')
 header.pack()
 
 label_url = Label(root, text="Enter the YouTube Video URL")

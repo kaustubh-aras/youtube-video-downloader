@@ -52,8 +52,4 @@ Find the source code on GitHub: [https://github.com/kaustubhkx/youtube-video-dow
 
 ## Setup File Download Link
 
-[Setup](https://drive.google.com/file/d/1iH2PY1kDAdUHzLlzAqvR6zhoABAhby5T/view?usp=share_link)
-=======
-## Setup File Download Link
-
 <a href="https://drive.google.com/file/d/14qrgVXaktUqA-Q8wly00AGzN-mDY7atK/view?usp=sharing" target="_blank">Setup</a>

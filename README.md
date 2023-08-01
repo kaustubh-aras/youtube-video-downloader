@@ -45,6 +45,7 @@ pip install pytube
 4. Click the "Clear" button to clear the URL input field.
 5. Click the "Exit" button to close the application.
 
+<<<<<<< HEAD
 
 ## GitHub
 
@@ -53,3 +54,8 @@ Find the source code on GitHub: [https://github.com/kaustubhkx/youtube-video-dow
 ## Setup File Download Link
 
 [Setup](https://drive.google.com/file/d/1iH2PY1kDAdUHzLlzAqvR6zhoABAhby5T/view?usp=share_link)
+=======
+## Setup File Download Link
+
+<a href="https://drive.google.com/file/d/14qrgVXaktUqA-Q8wly00AGzN-mDY7atK/view?usp=sharing" target="_blank">Setup</a>
+>>>>>>> 1ec7620cfc03860cb93f56d915b4ee2461b217aa
